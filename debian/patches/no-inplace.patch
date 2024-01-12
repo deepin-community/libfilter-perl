@@ -1,0 +1,35 @@
+From ebde388f732a3fb7592b8f29f75c76cff4c2ff65 Mon Sep 17 00:00:00 2001
+From: Colin Watson <cjwatson@debian.org>
+Date: Wed, 15 Jan 2014 16:19:49 +0000
+Subject: Disable in-place editing in Makefile.PL
+
+Forwarded: no
+Last-Update: 2010-05-26
+
+Patch-Name: no-inplace.patch
+---
+ Makefile.PL | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile.PL b/Makefile.PL
+index 008f618..752392a 100644
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -127,7 +127,7 @@ release : test dist
+ 
+ sub oldWarnings
+ {
+-    local ($^I) = ".bak" ;
++    local ($^I) = "" ;
+     local (@ARGV) = @_ ;
+ 
+     while (<>)
+@@ -151,7 +151,7 @@ sub oldWarnings
+ 
+ sub newWarnings
+ {
+-    local ($^I) = ".bak" ;
++    local ($^I) = "" ;
+     local (@ARGV) = @_ ;
+ 
+     while (<>)

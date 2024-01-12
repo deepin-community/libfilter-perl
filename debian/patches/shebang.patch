@@ -1,0 +1,44 @@
+From 04fb915176d1295ce72f23a8f6648d28c4e74aa8 Mon Sep 17 00:00:00 2001
+From: Colin Watson <cjwatson@debian.org>
+Date: Wed, 15 Jan 2014 16:19:48 +0000
+Subject: Apply #!/usr/bin/perl to all installed Perl scripts
+
+Forwarded: no
+Last-Update: 2010-05-26
+
+Patch-Name: shebang.patch
+---
+ decrypt/decr    | 2 +-
+ decrypt/encrypt | 2 +-
+ examples/filtuu | 1 +
+ 3 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/decrypt/decr b/decrypt/decr
+index 357e27c..753139c 100644
+--- a/decrypt/decr
++++ b/decrypt/decr
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # This script will decrypt a Perl script that has been encrypted using the
+ # "encrypt" script. It cannot decrypt any other kind of encrypted Perl script.
+diff --git a/decrypt/encrypt b/decrypt/encrypt
+index 6438a43..eabf255 100755
+--- a/decrypt/encrypt
++++ b/decrypt/encrypt
+@@ -1,4 +1,4 @@
+-#!perl
++#!/usr/bin/perl
+ require 5.002 ;
+ 
+ use strict;
+diff --git a/examples/filtuu b/examples/filtuu
+index e16ab39..dfebfc5 100755
+--- a/examples/filtuu
++++ b/examples/filtuu
+@@ -1,3 +1,4 @@
++#!/usr/bin/perl
+ 
+ print "use Filter::UUdecode ;\n" ;
+ while (<>) {

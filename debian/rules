@@ -1,4 +1,16 @@
-#!/usr/bin/make -f
+#! /usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS := hardening=+all
+export DEB_CFLAGS_MAINT_APPEND := -Wall
 
 %:
 	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- INSTALLMAN3DIR=/usr/share/man/man3
+
+override_dh_auto_test:
+	LC_ALL=C.UTF-8 dh_auto_test
+
+execute_after_dh_install:
+	chmod +x debian/libfilter-perl/usr/share/doc/libfilter-perl/examples/decrypt/decr
