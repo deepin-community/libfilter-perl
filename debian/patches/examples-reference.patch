@@ -1,0 +1,30 @@
+From 7bb820863bd67ce7e557184714bbc5e05d5d0143 Mon Sep 17 00:00:00 2001
+From: Colin Watson <cjwatson@debian.org>
+Date: Wed, 15 Jan 2014 16:19:51 +0000
+Subject: Refer to encryption/decryption scripts from Filter::decrypt(3pm)
+
+Bug-Debian: http://bugs.debian.org/566739
+Forwarded: no
+Last-Update: 2010-05-26
+
+Patch-Name: examples-reference.patch
+---
+ decrypt/decrypt.pm | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/decrypt/decrypt.pm b/decrypt/decrypt.pm
+index 2a8bece..ff1d811 100644
+--- a/decrypt/decrypt.pm
++++ b/decrypt/decrypt.pm
+@@ -101,6 +101,11 @@ If you feel that the source filtering mechanism is not secure enough
+ you could try using the unexec/undump method. See the Perl FAQ for
+ further details.
+ 
++=head1 EXAMPLES
++
++See /usr/share/doc/libfilter-perl/examples/decrypt/ for examples of
++encryption and decryption scripts using this filter.
++
+ =head1 AUTHOR
+ 
+ Paul Marquess 
